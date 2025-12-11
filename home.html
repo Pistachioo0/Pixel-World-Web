@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel World</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nabla&family=Press+Start+2P&display=swap');
+    .font-nabla { font-family: 'Nabla', cursive; }
+    .font-8bit { font-family: 'Press Start 2P', cursive; }
+
+    @layer utilities {
+    .fade-in {
+      animation: fadeIn 0.8s ease-out forwards; }
+    .slide-left {
+      animation: slideLeft 0.8s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideLeft {
+      from { opacity: 0; transform: translateX(-30px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .float { animation: float 6s ease-in-out infinite; }
+  }
+  </style>
+</head>
+<body class="min-h-screen bg-black">
+
+  <div class="fixed inset-0 -z-10">
+    <img src="img/BackgroundPIXEL3.jpg" class="w-full h-full object-cover object-top">
+  </div>
+
+  <header class="sticky top-4 sm:top-8 z-50 px-6">
+    <nav class="max-w-5xl mx-auto flex justify-between items-center 
+                    bg-white/10 backdrop-blur-md rounded-2xl 
+                    border border-white/20 px-6 sm:px-8 py-5">
+
+      <a href="home.html" class="text-4xl sm:text-5xl font-nabla text-white">
+        Pixel
+      </a>
+
+      <ul class="hidden md:flex gap-10 text-white font-8bit text-xs tracking-wider">
+        <li><a href="about.html" class="hover:text-cyan-300 transition">About</a></li>
+        <li><a href="credit.html" class="hover:text-cyan-300 transition">Credit</a></li>
+        <li><a href="contact.html" class="hover:text-cyan-300 transition">Contact</a></li>
+      </ul>
+
+      <button id="menu-btn" class="md:hidden z-50 relative w-10 h-10 focus:outline-none">
+        <span class="block absolute h-1 w-full bg-white rounded transition-all duration-300 top-3"></span>
+        <span class="block absolute h-1 w-full bg-white rounded transition-all duration-300 top-5"></span>
+        <span class="block absolute h-1 w-full bg-white rounded transition-all duration-300 top-7"></span>
+      </button>
+
+      <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-6 right-6 
+                                    bg-black/50 backdrop-blur-md rounded-2xl border-2 border-white/30 
+                                    p-8 space-y-8 text-center font-8bit text-2xl shadow-2xl">
+        <a href="about.html" class="block text-white hover:text-cyan-300 transition">About</a>
+        <a href="credit.html" class="block text-white hover:text-cyan-300 transition">Credit</a>
+        <a href="contact.html" class="block text-white hover:text-cyan-300 transition">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="container mx-auto px-6 py-20 sm:py-32 text-center sm:text-left">
+    <h1 class="text-6xl sm:text-8xl md:text-9xl font-nabla text-white leading-tight
+                [text-shadow:_5px_5px_0px_#000] mb-4 slide-left delay-150 float">
+      WELCOME
+    </h1>
+    <p class="text-2xl sm:text-3xl md:text-4xl font-8bit text-white tracking-widest 
+                [text-shadow:_5px_5px_0px_#000] mb-10 slide-left delay-200">
+      To My Pixel World
+    </p>
+
+    <p class="max-w-2xl mx-auto sm:mx-0 text-base sm:text-lg font-8bit text-white/80 leading-relaxed 
+              px-6 sm:px-8 py-8 bg-black/30 rounded-3xl border-2 mb-12 fade-in delay-300">
+      Just a simple place on the internet.<br class="hidden sm:block">
+      Made with love, 8-bit soul, and Retro Vibe's.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-6 justify-center sm:justify-start fade-in delay-1000">
+      <a href="shop.html" class="px-10 py-5 bg-white text-black font-8bit text-lg
+                        border-4 border-black hover:bg-gray-300 hover:-translate-y-1 
+                        transition-all rounded-2xl">
+        Enter Site
+      </a>
+      <a href="#" class="px-10 py-5 bg-transparent text-white font-8bit text-lg
+                        border-4 border-white hover:bg-white/10 hover:-translate-y-1 
+                        transition-all rounded-2xl">
+        View Work
+      </a>
+    </div>
+  </section>
+
+  <footer class="mt-32 pb-10 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="h-2 bg-white/30 mb-8"></div>
+      <div class="flex flex-col md:flex-row justify-between items-center gap-8 
+                    bg-black/40 backdrop-blur-md rounded-2xl border-2 border-white/20 
+                    px-10 py-8">
+        <div class="text-center md:text-left">
+          <h3 class="text-3xl font-nabla text-white mb-2">Pixel World</h3>
+        </div>
+        <div class="flex gap-8 text-xs font-8bit text-white/80">
+          <a href="https://www.instagram.com/biannoo_/" class="hover:text-cyan-300 transition">Instagram</a>
+          <a href="https://www.tiktok.com/@fabiannoooo" class="hover:text-cyan-300 transition">Tiktok</a>
+          <a href="#" class="hover:text-cyan-300 transition">Discord</a>
+        </div>
+        <div class="text-right">
+          <p class="text-xs font-8bit text-white/60 tracking-widest">
+            © 2025 Pixel World<br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const bars = menuBtn.querySelectorAll('span');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      
+      bars[0].classList.toggle('rotate-45');
+      bars[0].classList.toggle('translate-y-2');
+      bars[1].classList.toggle('opacity-0');
+      bars[2].classList.toggle('-rotate-45');
+      bars[2].classList.toggle('-translate-y-2');
+    });
+  </script>
+
+</body>
+</html>

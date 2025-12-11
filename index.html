@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel World</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nabla&family=Press+Start+2P&display=swap');
+    .font-nabla { font-family: 'Nabla', cursive; }
+    .font-8bit { font-family: 'Press Start 2P', cursive; }
+    
+    @layer utilities {
+    .fade-in {
+      animation: fadeIn 0.8s ease-out forwards; }
+    .slide-left {
+      animation: slideLeft 0.8s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideLeft {
+      from { opacity: 0; transform: translateX(-30px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .float { animation: float 6s ease-in-out infinite; }
+  }
+  </style>
+</head>
+<body class="min-h-screen bg-black">
+
+  <div class="fixed inset-0 -z-10">
+    <img src="img/backgroundPIXEL2.jpg" alt="Pixel Landscape" 
+         class="w-full h-full object-cover object-top">
+  </div>
+
+  
+
+  <section class="min-h-screen flex flex-col items-center justify-center text-center px-6">
+    <h1 class="text-8xl md:text-9xl font-nabla text-white mb-8 fade-in delay-150
+       float         ">
+      PIXEL WORLD
+    </h1>
+    <p class="text-2xl md:text-3xl font-8bit text-white tracking-wider [text-shadow:_6px_6px_0px_#57595b] bg-black/20 rounded-2xl border-2 py-4 px-5 fade-in delay-300">
+      Welcome To My 8-Bit Website
+    </p>
+    <div class="mt-12">
+      <a href="home.html" class="inline-block rounded-2xl
+      hover:scale-110 hover:animate-pulse transition-all w-1/4 fade-in delay-1000 float">
+      <img src="img/START-removebg-preview.png">
+    </a>
+  </div>
+  <div class="absolute bottom-10 animate-bounce">
+    <p class="text-white/60 font-8bit text-xs tracking-widest my-14">Press To Start ↑</p>
+  </div>
+</section>
+
+</body>
+</html>
